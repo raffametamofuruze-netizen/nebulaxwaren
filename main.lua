@@ -96,7 +96,7 @@ Tab:Paragraph({
                 game:GetService("StarterGui"):SetCore("SendNotification", {
                     Title = "✅ Discord Link Copied!",
                     Text = link,
-                    Icon = "rbxassetid://6031075938",
+                    Icon = "webhook",
                     Duration = 5
                 })
                 
@@ -1869,4 +1869,5 @@ if getgenv().NebulaWareX_Loaded then
     return
 else
     getgenv().NebulaWareX_Loaded = true
+
 end
