@@ -1,46 +1,3 @@
--- LOADING GUI MINI (taro di baris paling atas script)
-repeat task.wait() until game.Players.LocalPlayer
-
-local CoreGui = game:GetService("CoreGui")
-local sg = Instance.new("ScreenGui", CoreGui)
-local frame = Instance.new("Frame", sg)
-local text = Instance.new("TextLabel", frame)
-local corner = Instance.new("UICorner", frame)
-
-sg.Name = "MiniLoading"
-frame.Size = UDim2.new(0, 220, 0, 60)
-frame.Position = UDim2.new(0.5, -110, -0.15, 0) -- agak atas biar ga ganggu
-frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-frame.BorderSizePixel = 0
-frame.BackgroundTransparency = 0.1
-
-corner.CornerRadius = UDim.new(0, 12)
-
-text.Size = UDim2.new(1,0,1,0)
-text.BackgroundTransparency = 1
-text.Text = "Loading script... 0s"
-text.TextColor3 = Color3.fromRGB(0, 255, 150)
-text.Font = Enum.Font.GothamBold
-text.TextSize = 18
-
--- Countdown + auto destroy
-spawn(function()
-    local waitTime = math.random(8, 14)
-    for i = 1, waitTime do
-        text.Text = "Loading script... " .. (waitTime - i + 1) .. "s"
-        task.wait(1)
-    end
-    -- Fade out + destroy
-    for i = 1, 10 do
-        frame.BackgroundTransparency = frame.BackgroundTransparency + 0.1
-        text.TextTransparency = text.TextTransparency + 0.1
-        task.wait(0.05)
-    end
-    sg:Destroy()
-end)
-
-task.wait(math.random(8, 14)) -- delay beneran
--- SELESAI! LANJUT SEMUA KODE UI & FITUR DI BAWAH INI BRO
 
 local Version = "1.6.53"
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/download/" .. Version .. "/main.lua"))()
@@ -2179,3 +2136,4 @@ Tab:Dropdown({
         })
     end
 })
+
